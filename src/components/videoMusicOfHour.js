@@ -1,5 +1,4 @@
 import React from "react"
-import YouTube from 'react-youtube';
 
 const URLs = [
     "https://www.youtube.com/embed/9j9YEuFeDAw", // 12am 
@@ -11,10 +10,10 @@ const URLs = [
     "https://www.youtube.com/embed/hhlLbg4CRBc", // 6am 
     "https://www.youtube.com/embed/jcPIAICO-DI", // 7am 
     "https://www.youtube.com/embed/J22dco5U-nY", // 8am 
-    "https://www.youtube.com/embed/odevRs61OqY", //9am 
+    "https://www.youtube.com/embed/odevRs61OqY", // 9am 
     "https://www.youtube.com/embed/uFq-VvnEa80", // 10am
     "https://www.youtube.com/embed/0dzoz1iOvws", // 11am
-    "https://www.youtube.com/embed/4pmZrtO8_co", //12pm
+    "https://www.youtube.com/embed/4pmZrtO8_co", // 12pm
     "https://www.youtube.com/embed/dAABrbS8QeA", // 1pm
     "https://www.youtube.com/embed/hwENcKas4nU", // 2pm
     "https://www.youtube.com/embed/TMFHHTFEMPQ", // 3pm
@@ -33,7 +32,7 @@ const VideoMusicOfHour = (props) => {
     const videoURL = URLs[hour];
     return (
         <section className="mx-auto flex items-center justify-center h-full flex-1 ">
-            <iframe className="max-w-md shadow-md" src={videoURL} frameBorder="0" ></iframe>
+            <iframe title="Youtube Video of Animal Crossing OST" className="max-w-md shadow-md" src={videoURL} frameBorder="0" ></iframe>
         </section>
     );
 }

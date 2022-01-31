@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet"
 import VideoMusicOfHour from '../components/videoMusicOfHour.js';
 import birthdays from './../assets/json/residentIdBirthday.json';
 import Villager from '../components/villager.js';
-import './../assets/fonts/nintendoP_Humming-E_002pr.otf';
 
 const IndexPage = () => {
   const [villager, setVillager] = useState(null);
@@ -75,9 +74,6 @@ const IndexPage = () => {
     return () => clearTimeout(timeout);
   }, [hour]);
 
-
-
-  console.log("rendered")
   if (!villager) {
     return null;
   };

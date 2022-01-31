@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react"
-import VideoMusicOfHour from './videoMusicOfHour.js';
-import birthdays from '../assets/json/residentIdBirthday.json';
 import './../assets/fonts/nintendoP_Humming-E_002pr.otf';
 
 const Villager = (props) => {
@@ -8,18 +6,19 @@ const Villager = (props) => {
 
   useEffect(() => {
     setVillager(props.villager);
-    updateWebsiteFavicon();
-  }, [props])
 
-  function updateWebsiteFavicon() {
+    // update favicon with villager icon 
     var link = document.querySelector("link[rel~='icon']");
     if (!link) {
       link = document.createElement('link');
       link.rel = 'icon';
       document.getElementsByTagName('head')[0].appendChild(link);
     }
-    link.href = villager["icon_uri"];
-  }
+    link.href = props.villager["icon_uri"];
+
+  }, [props])
+
+
 
   if (!villager) {
     return null;
