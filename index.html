@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundImage: {
+                        leaf: "url('../images/acnh_leaves_transparent.png')",
+                        // msgBubble: "url('../images/message_bubble.png')",
+
+                        msgBubble: "url('../images/acnh_bubble_background.svg')",
+
+                    },
+                    fontFamily: {
+                        'Message': ['Nunito'],
+
+                    },
+                    colors: {
+                        'msgBubbleColor': "#7a673f",
+
+                        'ACBrown': {
+                            100: "#f3e9c7",
+                            200: "#ead282",
+                            300: "#cc8635",
+                            400: "#b57327",
+                            500: "#3f2c0d",
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+
+</head>
+
+<body>
+    <div className="wrapper h-full min-h-screen relative flex flex-col justify-center bg-slate-600">
+        <main className=" w-2/3 mx-auto">
+            <div className="border-solid border-8 p-2 flex flex-col justify-center items-center ">
+                <img className="rounded-full w-36 h-36 mb-4" src="https://acnhapi.com/v1/images/villagers/196" alt="" />
+                <div className="message-bubble  relative text-center">
+                    <StaticImage src="../images/acnh_bubble_background.svg" alt="" className="w-full" />
+                    <span
+                        className="absolute text-center w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold font-Message text-msgBubbleColor text-3xl md:text-4xl">Happy
+                        Birthday {villager["name"]["name-USen"]}!</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

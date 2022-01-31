@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-leaves {
+    background-repeat: repeat; 
+    background-image: url('../images/bg_grass.jpg'); 
+ }
+
+ 
+ .glow-villager {
+    /* background: #a8393d; */ 
+
+    animation: glowAnimationVillager 1.2s infinite alternate ease-in-out;
+    
+ }
+  
+  @keyframes glowAnimationVillager {
+    from {
+        box-shadow: 0px 0px 0px 5px #faa5af;
+      }
+    to {
+      box-shadow: 0px 0px 0px 15px #faa5af;
+    }
+  } 
+
+  .glow-video {
+    /* background: #a8393d; */ 
+
+    animation: glowAnimationVideo 1.2s infinite alternate ease-in-out;
+    
+ }
+  
+  @keyframes glowAnimationVideo {
+    from {
+        box-shadow: 0px 0px 0px 5px #5ac591;
+      }
+    to {
+      box-shadow: 0px 0px 0px 15px #5ac591;
+    }
+  } 
+
+  @font-face {
+    font-family: "NintendoAC";
+    src: url('../assets/fonts/nintendoP_Humming-E_002pr.otf'); 
+    font-weight: bold;
+    }
+
+    .acFont {
+        font-family: "NintendoAC";
+    }
+
+
+    /* backgroundColor: '#f8f8f0', boxShadow: '0px 0px 0px 10px rgb(255 255 255 / 30%)' */
