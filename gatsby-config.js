@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `animal-crossing-birthday-tracker`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://animal-crossing-birthday-tracker.netlify.app/`
   },
   plugins: ["gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',

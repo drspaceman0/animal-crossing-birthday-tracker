@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import './../assets/fonts/nintendoP_Humming-E_002pr.otf';
 
 const Villager = (props) => {
   const [villager, setVillager] = useState(props.villager);

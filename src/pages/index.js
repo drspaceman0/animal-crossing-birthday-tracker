@@ -98,14 +98,5 @@ const IndexPage = () => {
     </>
   );
 }
-//         id: d["id"],
-//         name: d["name"]["name-USen"],
-//         personality: d["personality"],
-//         birthday: d["birthday"], //need to format this. rn its "9/3"=march 9th
-//         species: d["species"],
-//         gender: d["gender"],
-//         chatchPhrase: d["catch-phrase"],
-//         iconURI: d["icon_uri"],
-//         imageURI: d["image_uri"],
 
 export default IndexPage

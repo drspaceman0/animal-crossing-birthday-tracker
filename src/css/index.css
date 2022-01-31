@@ -24,11 +24,8 @@
     }
   } 
 
-  .glow-video {
-    /* background: #a8393d; */ 
-
+  .glow-video { 
     animation: glowAnimationVideo 1.2s infinite alternate ease-in-out;
-    
  }
   
   @keyframes glowAnimationVideo {
@@ -49,6 +46,4 @@
     .acFont {
         font-family: "NintendoAC";
     }
-
-
-    /* backgroundColor: '#f8f8f0', boxShadow: '0px 0px 0px 10px rgb(255 255 255 / 30%)' */
+ 

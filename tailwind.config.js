@@ -5,23 +5,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        // leaf: "url('../images/acnh_leaves_transparent.png')",
-        // msgBubble: "url('../images/message_bubble.png')",
-
-        bubblePink: "url('../images/quote_bubble.svg')",
         leaves: "url('../images/bg_grass.jpg')",
-
-
-      },
-      fontFamily: {
-        'Message': ['Nunito'],
-
       },
       colors: {
         'whiteSmoke': "#f8f8f0",
-
         'msgTextColor': "#827157",
-
         'coralPink': "#faa5af",
         'kahki': "#ffecb7",
         'ACBrown': {
