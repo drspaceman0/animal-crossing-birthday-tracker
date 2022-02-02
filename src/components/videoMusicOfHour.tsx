@@ -27,9 +27,8 @@ const URLs = [
     "https://www.youtube.com/embed/Ar8sNQNvi90"  // 11pm 
 ];
 
-const VideoMusicOfHour = (props) => {
-    const hour = props.hour;
-    const videoURL = URLs[hour];
+const VideoMusicOfHour = ({ hour }) => {
+    const videoURL: string = URLs[hour];
     return (
         <section className="mx-auto flex items-center justify-center h-full flex-1 ">
             <iframe title="Youtube Video of Animal Crossing OST" className="max-w-md shadow-md" src={videoURL} frameBorder="0" ></iframe>

@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from "react"
 import { Helmet } from "react-helmet"
-import VideoMusicOfHour from '../components/videoMusicOfHour.js';
-import birthdays from './../assets/json/residentIdBirthday.json';
-import Villager from '../components/villager.js';
+import VideoMusicOfHour from '../components/videoMusicOfHour';
+import birthdays from '../assets/json/residentIdBirthday.json';
+import Villager from '../components/villager';
+import VillagerType from '../types/villager';
+
+
+
 
 const IndexPage = () => {
-  const [villager, setVillager] = useState(null);
-  const [hour, setHour] = useState(null);
-  function getCurrentHour() {
-    return new Date().getHours();
+  const [villager, setVillager] = useState<VillagerType | undefined>(undefined);
+  const [hour, setHour] = useState<number>(new Date().getHours());
+
+  function getSetCurrentHour(): void {
+    var d: number = new Date().getHours()
+    setHour(d);
   }
 
-  function getTimeUntilNextHour() {
+  function getTimeUntilNextHour(): number {
     var currentHour = new Date();
     var nextHour = new Date();
     nextHour.setHours(nextHour.getHours() + 1, 0, 0, 0);
-    return nextHour - currentHour;
+    return nextHour.getTime() - currentHour.getTime();
   }
 
-  function getBirthdayVillager() {
+  function getSetBirthdayVillager(): void {
     var todaysDate = new Date().toLocaleDateString('en-us', { day: "numeric", month: "numeric" });
     const birthdayBoy = birthdays.filter(
       function (data) {
@@ -31,11 +37,17 @@ const IndexPage = () => {
     fetch(`https://acnhapi.com/v1a/villagers/${villagerID}`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
-        setVillager(resultData)
+        var myVillager: VillagerType = resultData;
+        if (myVillager === undefined) {
+          console.log("error");
+        } else {
+          setVillager(myVillager);
+        }
+        return;
       });
   }
 
-  function showMessageForHire() {
+  function showMessageForHire(): void {
     console.log("***** ");
     console.log("NEED A WEB DEVELOPER? ");
     console.log("freelance | contract-for-hire | full-time | part-time ");
@@ -46,10 +58,7 @@ const IndexPage = () => {
 
   // on render
   useEffect(() => {
-    const v = getBirthdayVillager();
-    setVillager(v);
-    const h = getCurrentHour();
-    setHour(h);
+    getSetBirthdayVillager();
   }, []);
 
 
@@ -59,15 +68,12 @@ const IndexPage = () => {
     var waitTime = getTimeUntilNextHour();
     // set timer to update hour
     const timeout = setTimeout(() => {
-      const h = getCurrentHour();
-      setHour(h);
-
+      getSetCurrentHour();
     }, waitTime);
 
     // get new villager if its a new day
     if (hour === 0 && villager) {
-      const v = getBirthdayVillager();
-      setVillager(v);
+      getSetBirthdayVillager();
     }
 
     // clear timer in case
@@ -86,15 +92,14 @@ const IndexPage = () => {
         <meta charSet="utf-8" />
         <meta name="description" content="Celebrate today's villager birthday" />
         <title>Animal Crossing Birthday Tracker</title>
-        {/* <link rel="canonical" href="http://ericmarshblog.com" /> */}
+        <link rel="icon" type="image/png" href={villager["icon_uri"]} sizes="16x16" />
+        <link rel="canonical" href="https://animal-crossing-birthday-tracker.netlify.app/" />
       </Helmet>
 
       <main className="h-full min-h-screen flex flex-col bg-leaves">
-        <Villager villager={villager} />
+        <Villager v={villager} />
         <VideoMusicOfHour hour={hour} />
       </main >
-
-
     </>
   );
 }

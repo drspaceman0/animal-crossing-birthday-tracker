@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-const Villager = (props) => {
-  const [villager, setVillager] = useState(props.villager);
+
+const Villager = ({ v }) => {
+  // const Villager = (propVillager: VillagerType | undefined) => {
+  const [villager, setVillager] = useState(v);
 
   useEffect(() => {
-    setVillager(props.villager);
-
-    // update favicon with villager icon 
-    var link = document.querySelector("link[rel~='icon']");
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'icon';
-      document.getElementsByTagName('head')[0].appendChild(link);
-    }
-    link.href = props.villager["icon_uri"];
-
-  }, [props])
-
-
+    setVillager(v);
+  }, [v])
 
   if (!villager) {
     return null;

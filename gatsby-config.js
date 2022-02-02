@@ -1,3 +1,9 @@
+require('ts-node').register({
+  compilerOptions: {
+    module: 'commonjs',
+    target: 'es2017',
+  },
+})
 module.exports = {
   siteMetadata: {
     title: `animal-crossing-birthday-tracker`,
@@ -8,7 +14,9 @@ module.exports = {
     options: {
       "icon": "src/images/favicon.png"
     }
-  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  },
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "images",
